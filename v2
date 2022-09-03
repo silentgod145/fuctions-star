@@ -1,0 +1,13 @@
+game.Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:connect(function(character)
+        local humanoid = character.Humanoid
+        if player:IsInGroup(tonumber(group_id)) then
+
+			if player:GetRankInGroup(tonumber(group_id)) == 1 then --rank ID
+
+				humanoid.DisplayName = "[⭐]".. player.DisplayName --Emoji for that Rank
+
+            end
+        end
+    end)
+end)
